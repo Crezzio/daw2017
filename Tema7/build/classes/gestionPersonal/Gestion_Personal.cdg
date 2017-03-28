@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="prueba">
+  <ClassDiagramComponents>
+    <Class name="Empleado" package="prueba" visibility="public" xPosition="1264.0" yPosition="20.0">
+      <Fields>
+        <Field name="NIF" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="edad" type="int" visibility="private"/>
+        <Field name="SMI" type="double" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="NIF"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="edad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="calculaSueldo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empleado_fijo" package="prueba" visibility="public" xPosition="988.0" yPosition="452.0">
+      <Fields>
+        <Field name="anyoAlta" type="int" visibility="private"/>
+        <Field name="COMPLEMENTO" type="float" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="anyoAlta"/>
+          <Argument type="String" name="NIF"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="edad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calculaSueldo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empleado_por_horas" package="prueba" visibility="public" xPosition="1391.0" yPosition="452.0">
+      <Fields>
+        <Field name="PRECIOHORA" type="double" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="numeroHoras" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="NIF"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="edad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setNumeroHoras" returnType="void" visibility="public">
+          <Argument type="int" name="numeroHoras"/>
+        </Method>
+        <Method name="calculaSueldo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empleado_temporal" package="prueba" visibility="public" xPosition="1761.0" yPosition="452.0">
+      <Fields>
+        <Field name="fAlta" type="GregorianCalendar" visibility="private"/>
+        <Field name="fBaja" type="GregorianCalendar" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GregorianCalendar" name="fAlta"/>
+          <Argument type="GregorianCalendar" name="fBaja"/>
+          <Argument type="String" name="NIF"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="edad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calculaSueldo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="prueba.Empleado_fijo" target="prueba.Empleado"/>
+    <IsRelation name="is" source="prueba.Empleado_temporal" target="prueba.Empleado"/>
+    <IsRelation name="is" source="prueba.Empleado_por_horas" target="prueba.Empleado"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
